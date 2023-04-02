@@ -1,0 +1,165 @@
+---
+title: "Forecasting: Principles and Practice -- 2nd Edition"
+author: "Dibz"
+date: "2023-04-01"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Chapter 2 - Time series graphics
+
+# 2.1 $ts$ objects
+
+$ts$ function turn data to time series
+
+```{r}
+y <- ts(c(123,39,78,52,110),start = 2012)
+```
+
+Suppose we have vector z, we can write
+
+```{r}
+z <- runif(24,1,100)
+y <- ts(z, start = 2003, frequency = 12)
+```
+
+# 2.2 Time plots
+
+Examples
+
+```{r}
+library(fpp2)
+autoplot(melsyd[,"Economy.Class"]) +
+  ggtitle("Economy class passengers: Melbourne-Sydney") +
+  xlab("Year") +
+  ylab("Thousands")
+```
+
+```{r}
+autoplot(a10) +
+  ggtitle("Antidiabetic drug sales") +
+  ylab("$ million") +
+  xlab("Year")
+```
+
+# 2.3 Times series patterns
+
+**Trend** - long term increase or decrease <br/>
+**Seasonal** - pattern occurs when data is affected by seasonal factors. Usually, fix and known frequency. <br/>
+**Cyclic** - pattern occurs not in fix frequency and usually at least 2 years. <br/>
+
+# 2.4 Seasonal plots
+
+To identify seasonality
+
+Examples
+
+**Seasonal plot**
+```{r}
+ggseasonplot(a10, year.labels=TRUE, year.labels.left=TRUE) +
+  ylab("$ million") +
+  ggtitle("Seasonal plot: antidiabetic drug sales")
+```
+
+**Polar plot**
+```{r}
+ggseasonplot(a10, polar=TRUE) +
+  ylab("$ million") +
+  ggtitle("Polar seasonal plot: antidiabetic drug sales")
+```
+
+**Seasonal subseries plot**
+
+```{r}
+ggsubseriesplot(a10) +
+  ylab("$ million") +
+  ggtitle("Seasonal subseries plot: antidiabetic drug sales")
+```
+
+# 2.6 Scatter plot
+
+Use to explore relationship between time series.
+
+Examples
+
+Data to time
+```{r}
+autoplot(elecdemand[,c("Demand","Temperature")], facets=TRUE) +
+  xlab("Year: 2014") + ylab("") +
+  ggtitle("Half-hourly electricity demand: Victoria, Australia")
+```
+
+Variable to variable
+```{r}
+qplot(Temperature, Demand, data=as.data.frame(elecdemand)) +
+  ylab("Demand (GW)") + xlab("Temperature (Celsius)")
+#> Warning: `qplot()` was deprecated in ggplot2 3.4.0.
+#> This warning is displayed once every 8 hours.
+#> Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.
+```
+
+Multivariable to time
+```{r}
+autoplot(visnights[,1:5], facets=TRUE) +
+  ylab("Number of visitor nights each quarter (millions)")
+```
+
+```{r}
+GGally::ggpairs(as.data.frame(visnights[,1:5]))
+```
+
+**Correlation**
+Linear relationship between variables.
+
+$r = \frac{\sum(x_t-\bar{x})(y_t-\bar{y})}{\sqrt{\sum(x_t-\bar{x})^2}{\sqrt{\sum(y_t-\bar{y})^2}}}$
+
+
+# 2.7 Lag plots
+
+```{r}
+beer2 <- window(ausbeer, start=1992)
+gglagplot(beer2)
+```
+
+# 2.8 Autocorrelation
+
+Correlation of the time series data with its *lagged values*. $T$ is the lenght of the time series.
+
+$r_k = \frac{\sum_{t=k+1}^T(y_t-\bar{y})(y_{t-k}-\bar{y})}{\sum_{t=1}^T(y_t-\bar{y})^2}$
+
+Example
+
+```{r}
+ggAcf(beer2)
+```
+
+In an ACF, trended time series tend to have positive values that slowly decrease as the lag increase. When it's seasonal, ACF is larger on the seaonal lags. If both, there is a combination of pattern from trend and season.
+
+```{r}
+aelec <- window(elec, start=1980)
+autoplot(aelec) + xlab("Year") + ylab("GWh")
+```
+
+```{r}
+ggAcf(aelec, lag=48)
+```
+
+# 2.9 White noise
+
+If the time series show no autocorrelation. Not necessarily equal to zero, we expect at least 95% of the spikes in ACF plot to lie within $\pm2/\sqrt{T}$. On the example below, the autocorrelation should be within the bounds of $T=50 ; \pm2/\sqrt{50} = \pm 0.28$
+
+Example
+```{r}
+set.seed(30)
+y <- ts(rnorm(50))
+autoplot(y) + ggtitle("White noise")
+```
+
+```{r}
+ggAcf(y)
+```

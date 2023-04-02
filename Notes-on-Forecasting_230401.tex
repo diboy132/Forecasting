@@ -1,0 +1,394 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Forecasting: Principles and Practice -- 2nd Edition},
+  pdfauthor={Dibz},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Forecasting: Principles and Practice -- 2nd Edition}
+\author{Dibz}
+\date{2023-04-01}
+
+\begin{document}
+\maketitle
+
+\hypertarget{chapter-2---time-series-graphics}{%
+\subsection{Chapter 2 - Time series
+graphics}\label{chapter-2---time-series-graphics}}
+
+\hypertarget{ts-objects}{%
+\section{\texorpdfstring{2.1 \(ts\)
+objects}{2.1 ts objects}}\label{ts-objects}}
+
+\(ts\) function turn data to time series
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{y }\OtherTok{\textless{}{-}} \FunctionTok{ts}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{123}\NormalTok{,}\DecValTok{39}\NormalTok{,}\DecValTok{78}\NormalTok{,}\DecValTok{52}\NormalTok{,}\DecValTok{110}\NormalTok{),}\AttributeTok{start =} \DecValTok{2012}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Suppose we have vector z, we can write
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{z }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\DecValTok{24}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{100}\NormalTok{)}
+\NormalTok{y }\OtherTok{\textless{}{-}} \FunctionTok{ts}\NormalTok{(z, }\AttributeTok{start =} \DecValTok{2003}\NormalTok{, }\AttributeTok{frequency =} \DecValTok{12}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{time-plots}{%
+\section{2.2 Time plots}\label{time-plots}}
+
+Examples
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(fpp2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Registered S3 method overwritten by 'quantmod':
+##   method            from
+##   as.zoo.data.frame zoo
+\end{verbatim}
+
+\begin{verbatim}
+## -- Attaching packages ---------------------------------------------- fpp2 2.5 --
+\end{verbatim}
+
+\begin{verbatim}
+## v ggplot2   3.4.0     v fma       2.5  
+## v forecast  8.21      v expsmooth 2.3
+\end{verbatim}
+
+\begin{verbatim}
+## 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{autoplot}\NormalTok{(melsyd[,}\StringTok{"Economy.Class"}\NormalTok{]) }\SpecialCharTok{+}
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Economy class passengers: Melbourne{-}Sydney"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Year"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Thousands"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notes-on-Forecasting_230401_files/figure-latex/unnamed-chunk-3-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{autoplot}\NormalTok{(a10) }\SpecialCharTok{+}
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Antidiabetic drug sales"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"$ million"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Year"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notes-on-Forecasting_230401_files/figure-latex/unnamed-chunk-4-1.pdf}
+
+\hypertarget{times-series-patterns}{%
+\section{2.3 Times series patterns}\label{times-series-patterns}}
+
+\textbf{Trend} - long term increase or decrease \textbf{Seasonal} -
+pattern occurs when data is affected by seasonal factors. Usually, fix
+and known frequency. \textbf{Cyclic} - pattern occurs not in fix
+frequency and usually at least 2 years.
+
+\hypertarget{seasonal-plots}{%
+\section{2.4 Seasonal plots}\label{seasonal-plots}}
+
+To identify seasonality
+
+Examples
+
+\textbf{Seasonal plot}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggseasonplot}\NormalTok{(a10, }\AttributeTok{year.labels=}\ConstantTok{TRUE}\NormalTok{, }\AttributeTok{year.labels.left=}\ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"$ million"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Seasonal plot: antidiabetic drug sales"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notes-on-Forecasting_230401_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+\textbf{Polar plot}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggseasonplot}\NormalTok{(a10, }\AttributeTok{polar=}\ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"$ million"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Polar seasonal plot: antidiabetic drug sales"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notes-on-Forecasting_230401_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+\textbf{Seasonal subseries plot}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggsubseriesplot}\NormalTok{(a10) }\SpecialCharTok{+}
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"$ million"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Seasonal subseries plot: antidiabetic drug sales"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notes-on-Forecasting_230401_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\hypertarget{scatter-plot}{%
+\section{2.6 Scatter plot}\label{scatter-plot}}
+
+Use to explore relationship between time series.
+
+Examples
+
+Data to time
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{autoplot}\NormalTok{(elecdemand[,}\FunctionTok{c}\NormalTok{(}\StringTok{"Demand"}\NormalTok{,}\StringTok{"Temperature"}\NormalTok{)], }\AttributeTok{facets=}\ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Year: 2014"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ylab}\NormalTok{(}\StringTok{""}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Half{-}hourly electricity demand: Victoria, Australia"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notes-on-Forecasting_230401_files/figure-latex/unnamed-chunk-8-1.pdf}
+
+Variable to variable
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{qplot}\NormalTok{(Temperature, Demand, }\AttributeTok{data=}\FunctionTok{as.data.frame}\NormalTok{(elecdemand)) }\SpecialCharTok{+}
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Demand (GW)"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{xlab}\NormalTok{(}\StringTok{"Temperature (Celsius)"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: `qplot()` was deprecated in ggplot2 3.4.0.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.
+\end{verbatim}
+
+\includegraphics{Notes-on-Forecasting_230401_files/figure-latex/unnamed-chunk-9-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#\textgreater{} Warning: \textasciigrave{}qplot()\textasciigrave{} was deprecated in ggplot2 3.4.0.}
+\CommentTok{\#\textgreater{} This warning is displayed once every 8 hours.}
+\CommentTok{\#\textgreater{} Call \textasciigrave{}lifecycle::last\_lifecycle\_warnings()\textasciigrave{} to see where this warning was generated.}
+\end{Highlighting}
+\end{Shaded}
+
+Multivariable to time
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{autoplot}\NormalTok{(visnights[,}\DecValTok{1}\SpecialCharTok{:}\DecValTok{5}\NormalTok{], }\AttributeTok{facets=}\ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Number of visitor nights each quarter (millions)"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notes-on-Forecasting_230401_files/figure-latex/unnamed-chunk-10-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{GGally}\SpecialCharTok{::}\FunctionTok{ggpairs}\NormalTok{(}\FunctionTok{as.data.frame}\NormalTok{(visnights[,}\DecValTok{1}\SpecialCharTok{:}\DecValTok{5}\NormalTok{]))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Registered S3 method overwritten by 'GGally':
+##   method from   
+##   +.gg   ggplot2
+\end{verbatim}
+
+\includegraphics{Notes-on-Forecasting_230401_files/figure-latex/unnamed-chunk-11-1.pdf}
+
+\textbf{Correlation} Linear relationship between variables.
+
+\(r = \frac{\sum(x_t-\bar{x})(y_t-\bar{y})}{\sqrt{\sum(x_t-\bar{x})^2}{\sqrt{\sum(y_t-\bar{y})^2}}}\)
+
+\hypertarget{lag-plots}{%
+\section{2.7 Lag plots}\label{lag-plots}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{beer2 }\OtherTok{\textless{}{-}} \FunctionTok{window}\NormalTok{(ausbeer, }\AttributeTok{start=}\DecValTok{1992}\NormalTok{)}
+\FunctionTok{gglagplot}\NormalTok{(beer2)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notes-on-Forecasting_230401_files/figure-latex/unnamed-chunk-12-1.pdf}
+
+\hypertarget{autocorrelation}{%
+\section{2.8 Autocorrelation}\label{autocorrelation}}
+
+Correlation of the time series data with its \emph{lagged values}. \(T\)
+is the lenght of the time series.
+
+\(r_k = \frac{\sum_{t=k+1}^T(y_t-\bar{y})(y_{t-k}-\bar{y})}{\sum_{t=1}^T(y_t-\bar{y})^2}\)
+
+Example
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggAcf}\NormalTok{(beer2)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notes-on-Forecasting_230401_files/figure-latex/unnamed-chunk-13-1.pdf}
+
+In an ACF, trended time series tend to have positive values that slowly
+decrease as the lag increase. When it's seasonal, ACF is larger on the
+seaonal lags. If both, there is a combination of pattern from trend and
+season.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{aelec }\OtherTok{\textless{}{-}} \FunctionTok{window}\NormalTok{(elec, }\AttributeTok{start=}\DecValTok{1980}\NormalTok{)}
+\FunctionTok{autoplot}\NormalTok{(aelec) }\SpecialCharTok{+} \FunctionTok{xlab}\NormalTok{(}\StringTok{"Year"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ylab}\NormalTok{(}\StringTok{"GWh"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notes-on-Forecasting_230401_files/figure-latex/unnamed-chunk-14-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggAcf}\NormalTok{(aelec, }\AttributeTok{lag=}\DecValTok{48}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notes-on-Forecasting_230401_files/figure-latex/unnamed-chunk-15-1.pdf}
+
+\hypertarget{white-noise}{%
+\section{2.9 White noise}\label{white-noise}}
+
+If the time series show no autocorrelation. Not necessarily equal to
+zero, we expect at least 95\% of the spikes in ACF plot to lie within
+\(\pm2/\sqrt{T}\).
+
+Example
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{30}\NormalTok{)}
+\NormalTok{y }\OtherTok{\textless{}{-}} \FunctionTok{ts}\NormalTok{(}\FunctionTok{rnorm}\NormalTok{(}\DecValTok{50}\NormalTok{))}
+\FunctionTok{autoplot}\NormalTok{(y) }\SpecialCharTok{+} \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"White noise"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notes-on-Forecasting_230401_files/figure-latex/unnamed-chunk-16-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggAcf}\NormalTok{(y)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notes-on-Forecasting_230401_files/figure-latex/unnamed-chunk-17-1.pdf}
+
+\end{document}
